@@ -76,16 +76,18 @@ body.login section {
     background-color: rgba(224, 224, 224, 0.5);
 }
 
-.auth-error {
+.error {
+    width: 100%;
     font-size: 14px;
+    text-align: center;
     color: #d32f2f;
 }
 
-.auth-error:empty {
+.error:empty {
     display: none;
 }
 
-.auth-error:empty ~ .auth-form {
+.error:empty ~ .auth-form {
     margin-top: 30px;
 }
 
