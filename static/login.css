@@ -30,11 +30,19 @@ body.login {
     background-image: linear-gradient(to right, #ffb347, #ffcc33);
 }
 
-body.login h1 {
-    margin: 0;
-    font-size: 42px;
-    font-weight: 300;
-    text-align: center;
+body.login .logo {
+    display: block;
+    width: 96px;
+    height: 96px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #333;
+}
+
+body.login .logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 body.login section {
