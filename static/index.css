@@ -119,3 +119,56 @@ body.chat section {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+.chat-form {
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.chat-form img {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-form input {
+    flex-grow: 1;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+}
+
+.chat-form button {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    margin-left: 10px;
+    background: #fff center center no-repeat;
+    background-size: 50%;
+}
+
+.chat-form .image-btn { background-image: url("images/image.png"); }
+.chat-form .send-btn { background-image: url("images/send.png"); }
+
+.chat-form .error {
+    width: 100%;
+    padding-left: calc(42px + 1em);
+    margin: 5px 0;
+    font-size: 14px;
+    color: #d32f2f;
+}
+
+.chat-form .error:empty {
+    display: none;
+}
