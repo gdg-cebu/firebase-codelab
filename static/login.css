@@ -27,13 +27,14 @@ body.login {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, #ffb347, #ffcc33);;
+    background-image: linear-gradient(to right, #ffb347, #ffcc33);
 }
 
 body.login h1 {
     margin: 0;
     font-size: 42px;
     font-weight: 300;
+    text-align: center;
 }
 
 body.login section {
