@@ -7,4 +7,52 @@
 body {
     min-height: 100vh;
     margin: 0;
+    font-family: "Open Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #333;
 }
+
+
+/** Login Page **/
+
+body.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #ffb347, #ffcc33);;
+}
+
+body.login h1 {
+    font-size: 42px;
+    font-weight: 300;
+    /*color: #fff;*/
+}
+
+.signin-methods {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.signin-methods li {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: transparent center center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 250ms ease;
+}
+
+.signin-methods li:hover {
+    transform: scale(1.15);
+}
+
+.signin-methods li.email { background-image: url("images/email.png"); }
+.signin-methods li.google { background-image: url("images/google.png"); }
+.signin-methods li.facebook { background-image: url("images/facebook.png"); }
+.signin-methods li.twitter { background-image: url("images/twitter.png"); }
+.signin-methods li.github { background-image: url("images/github.png"); }
