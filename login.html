@@ -13,8 +13,44 @@
     <body class="login">
         <h1>Firebase Codelab</h1>
 
-        <ul class="signin-methods">
-            <li class="email"></li>
+        <section>
+            <input id="signup" class="auth-action" type="radio" name="auth-action" value="signup" checked>
+            <label class="auth-action-label" for="signup">Sign Up</label>
+            <input id="signin" class="auth-action" type="radio" name="auth-action" value="signin">
+            <label class="auth-action-label" for="signin">Sign In</label>
+
+            <p class="auth-error"></p>
+
+            <form action="#" method="post" class="auth-form signup-form">
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="email">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password">
+                </div>
+                <div>
+                    <button>Sign Up</button>
+                </div>
+            </form>
+
+            <form action="#" method="post" class="auth-form signin-form">
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="email">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password">
+                </div>
+                <div>
+                    <button>Sign In</button>
+                </div>
+            </form>
+        </section>
+
+        <ul class="social-signins">
             <li class="google"></li>
             <li class="facebook"></li>
             <li class="twitter"></li>

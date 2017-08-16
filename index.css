@@ -12,6 +12,13 @@ body {
     color: #333;
 }
 
+a,
+input,
+button {
+    font: inherit;
+    color: inherit;
+}
+
 
 /** Login Page **/
 
@@ -24,18 +31,128 @@ body.login {
 }
 
 body.login h1 {
+    margin: 0;
     font-size: 42px;
     font-weight: 300;
-    /*color: #fff;*/
 }
 
-.signin-methods {
+body.login section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 300px;
+    margin: 30px 0;
+}
+
+.auth-action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.01;
+    transform: scale(0.01);
+}
+
+.auth-action-label {
+    width: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.auth-action:checked + label {
+    background-color: rgba(224, 224, 224, 0.5);
+}
+
+.auth-error {
+    font-size: 14px;
+    color: #d32f2f;
+}
+
+.auth-error:empty {
+    display: none;
+}
+
+.auth-error:empty ~ .auth-form {
+    margin-top: 30px;
+}
+
+.auth-form {
+    display: none;
+    width: 100%;
+}
+
+.auth-form div:not(:first-child) {
+    margin-top: 10px;
+}
+
+.auth-form div:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.auth-form input {
+    display: block;
+    width: 100%;
+    padding: 0.5em 0.75em;
+    border: none;
+    font-size: 14px;
+}
+
+.auth-form button {
+    display: block;
+    padding: 0 30px;
+    border: none;
+    border-radius: 0;
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #03a9f4;
+    cursor: pointer;
+}
+
+.auth-form button.loading {
+    position: relative;
+    color: transparent;
+    opacity: 0.75;
+}
+
+.auth-form button.loading::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 8px);
+    animation: rotate 500ms linear infinite;
+}
+
+.auth-action[value="signup"]:checked ~ .signup-form,
+.auth-action[value="signin"]:checked ~ .signin-form {
+    display: block;
+}
+
+.social-signins {
     display: flex;
     padding: 0;
     margin: 0;
 }
 
-.signin-methods li {
+.social-signins li {
     display: block;
     width: 32px;
     height: 32px;
@@ -47,12 +164,25 @@ body.login h1 {
     transition: transform 250ms ease;
 }
 
-.signin-methods li:hover {
+.social-signins li:hover {
     transform: scale(1.15);
 }
 
-.signin-methods li.email { background-image: url("images/email.png"); }
-.signin-methods li.google { background-image: url("images/google.png"); }
-.signin-methods li.facebook { background-image: url("images/facebook.png"); }
-.signin-methods li.twitter { background-image: url("images/twitter.png"); }
-.signin-methods li.github { background-image: url("images/github.png"); }
+.social-signins li.email { background-image: url("images/email.png"); }
+.social-signins li.google { background-image: url("images/google.png"); }
+.social-signins li.facebook { background-image: url("images/facebook.png"); }
+.social-signins li.twitter { background-image: url("images/twitter.png"); }
+.social-signins li.github { background-image: url("images/github.png"); }
+
+
+/** Animation Definitions **/
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
