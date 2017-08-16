@@ -15,7 +15,7 @@
             <img src="static/images/firebase.png" alt="Firebase Logo">
         </div>
 
-        <section>
+        <section class="hidden login-section">
             <input id="signup" class="auth-action" type="radio" name="auth-action" value="signup" checked>
             <label class="auth-action-label" for="signup">Sign Up</label>
             <input id="signin" class="auth-action" type="radio" name="auth-action" value="signin">
@@ -26,11 +26,11 @@
             <form action="#" method="post" class="auth-form signup-form">
                 <div>
                     <label for="email">Email</label>
-                    <input id="email" type="text" name="email">
+                    <input id="email" type="emai" name="email" required>
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input id="password" type="password" name="password">
+                    <input id="password" type="password" name="password" required>
                 </div>
                 <div>
                     <button>Sign Up</button>
@@ -40,23 +40,30 @@
             <form action="#" method="post" class="auth-form signin-form">
                 <div>
                     <label for="email">Email</label>
-                    <input id="email" type="text" name="email">
+                    <input id="email" type="email" name="email" required>
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input id="password" type="password" name="password">
+                    <input id="password" type="password" name="password" required>
                 </div>
                 <div>
                     <button>Sign In</button>
                 </div>
             </form>
         </section>
+        <section class="hidden logout-section">
+            <a href="#">Logout</a>
+        </section>
 
-        <ul class="social-signins">
+        <ul class="social-signins login-section hidden">
             <li class="google"></li>
             <li class="facebook"></li>
-            <li class="twitter"></li>
-            <li class="github"></li>
+            <!-- <li class="twitter"></li>
+            <li class="github"></li> -->
         </ul>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <script src="static/config.js"></script>
+        <script src="static/login.js"></script>
     </body>
 </html>

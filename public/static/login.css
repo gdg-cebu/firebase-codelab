@@ -183,6 +183,9 @@ body.login section {
 .social-signins li.twitter { background-image: url("images/twitter.png"); }
 .social-signins li.github { background-image: url("images/github.png"); }
 
+.hidden {
+    display: none !important;
+}
 
 /** Animation Definitions **/
 
