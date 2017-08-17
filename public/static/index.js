@@ -1,3 +1,4 @@
+var globalUser = null;
 var index = {
     init: function() {
         firebase.auth().onAuthStateChanged(function(user) {
@@ -5,6 +6,9 @@ var index = {
                 window.location = '/login.html';
             } else {
                 $('.chat').removeClass('hidden');
+                globalUser = user;
+                // database init
+                database.init();
             }
         });
         this.enableLogout();

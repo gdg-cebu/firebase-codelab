@@ -1,8 +1,23 @@
+var db = firebase.database();
+var userref = db.ref('/users');
+
 var login = {
     init: function() {
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-                window.location = '/';
+                var userRef = db.ref('/users/' + user.uid);
+                // Take a static snapshot of the value
+                // to check if its present or not
+                userRef.once('value').then(function(data) {
+                    if (data.val() == null) {
+                        userRef.set({
+                            'name': user.displayName || 'no name',
+                            'photoURL': user.photoURL || 'https://randomuser.me/api/portraits/men/79.jpg',
+                            'email': user.email
+                        });
+                    }
+                    window.location = '/';
+                });
             } else {
                 $('.login-section').removeClass('hidden');
             }
@@ -64,7 +79,7 @@ var login = {
             });
 
         });
-    }, 
+    },
 }
 
 login.init();
