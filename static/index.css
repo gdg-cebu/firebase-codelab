@@ -257,3 +257,19 @@ body.chat section {
 .chat-form .error:empty {
     display: none;
 }
+
+.chat-form .image-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-form .file-input {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: red;
+    opacity: 0.01;
+}
