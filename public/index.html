@@ -6,10 +6,62 @@
 
         <title>Firebase Codelab</title>
 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
         <link rel="stylesheet" href="static/index.css">
     </head>
 
-    <body>
-        <script src="index.js"></script>
+    <body class="chat">
+        <header class="app-header">
+            <div class="logo">
+                <img src="static/images/firebase.png" alt="Firebase Logo">
+            </div>
+
+            <button class="notification-btn enabled"></button>
+            <button class="logout-btn"></button>
+        </header>
+
+        <section>
+            <ul class="messages">
+                <li class="message">
+                    <header>
+                        <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="Dummy User">
+                        <h2>Dummy User</h2>
+                        <button class="delete-btn"></button>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique optio doloribus iusto aperiam nemo id quia eos porro, dolores repellat nulla, eius quibusdam voluptatem culpa, vitae qui ex. Iusto, ratione.</p>
+                </li>
+                <li class="message self">
+                    <header>
+                        <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="Dummy User">
+                        <h2>Dummy User</h2>
+                        <button class="delete-btn"></button>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique optio doloribus iusto aperiam nemo id quia eos porro, dolores repellat nulla, eius quibusdam voluptatem culpa, vitae qui ex. Iusto, ratione.</p>
+                </li>
+                <li class="message">
+                    <header>
+                        <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="Dummy User">
+                        <h2>Dummy User</h2>
+                        <button class="delete-btn"></button>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </li>
+                <li class="message">
+                    <header>
+                        <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="Dummy User">
+                        <h2>Dummy User</h2>
+                        <button class="delete-btn"></button>
+                    </header>
+                    <img src="https://unsplash.it/300/300">
+                </li>
+            </ul>
+            <form action="#" method="post" class="chat-form">
+                <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="Current User">
+                <input type="text" name="message" placeholder="Send a message" autofocus>
+                <button class="image-btn" type="button"></button>
+                <button class="send-btn"></button>
+                <p class="error"></p>
+            </form>
+        </section>
     </body>
 </html>
