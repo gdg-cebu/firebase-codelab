@@ -11,9 +11,13 @@
     </head>
 
     <body class="chat">
-        <div class="logo">
-            <img src="static/images/firebase.png" alt="Firebase Logo">
-        </div>
+        <header class="app-header">
+            <div class="logo">
+                <img src="static/images/firebase.png" alt="Firebase Logo">
+            </div>
+
+            <button class="logout-btn" type="button"></button>
+        </header>
 
         <section>
             <ul class="messages">
@@ -47,7 +51,6 @@
                 </li>
             </ul>
             <form action="#" method="post" class="chat-form">
-                <button class="logout-btn" type="button"></button>
                 <img src="https://randomuser.me/api/portraits/men/79.jpg" alt="Current User">
                 <input type="text" name="message" placeholder="Send a message" autofocus>
                 <button class="image-btn" type="button"></button>
