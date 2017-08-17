@@ -71,6 +71,11 @@ body.chat {
     transform: scale(1.15);
 }
 
+.app-header .notification-btn { background-image: url("images/notification.png"); }
+.app-header .notification-btn.enabled {
+    background-image: url("images/notification-enabled.png");
+    background-color: #333;
+}
 .app-header .logout-btn { background-image: url("images/logout.png"); }
 
 body.chat section {
