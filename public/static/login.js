@@ -2,15 +2,12 @@ var login = {
     init: function() {
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-                $('.logout-section').removeClass('hidden');
-                $('.login-section').addClass('hidden');
+                window.location = '/';
             } else {
-                $('.logout-section').addClass('hidden');
                 $('.login-section').removeClass('hidden');
             }
         });
         this.enableSocialSignIn();
-        this.enableSignOut();
         this.enableEmailSignUp();
         this.enableEmailSignIn();
     },
@@ -22,11 +19,10 @@ var login = {
             var email  = form.find('input[name="email"]').val();
             var password = form.find('input[name="password"]').val();
             firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
-                console.log(user);
-                $('.auth-error').text('');
+                $('.error').text('');
             }).catch(function(error) {
                 var message = error.message;
-                $('.auth-error').text(message);
+                $('.error').text(message);
             });
         });
     },
@@ -40,11 +36,10 @@ var login = {
             firebase.auth().signInWithEmailAndPassword(email, password).catch(
                 function(error) {
                 var message = error.message;
-                console.log(message);
-                $('.auth-error').text(message);
+                $('.error').text(message);
             }).then(function(user) {
                 if (user) {
-                    $('.auth-error').text('');
+                    $('.error').text('');
                 }
             });
         });
@@ -61,22 +56,15 @@ var login = {
                 var user = result.user;
                 if (user) {
                     console.log('wecome', user.email);
-                    $('.auth-error').text('');
+                    $('.error').text('');
                 }
             }, function(error) {
                 var message = error.message;
-                $('.auth-error').text(message);
+                $('.error').text(message);
             });
 
         });
     }, 
-
-    enableSignOut: function() {
-        $('.logout-section a').on('click', function(e) {
-            e.preventDefault();
-            firebase.auth().signOut();
-        });
-    }
 }
 
 login.init();

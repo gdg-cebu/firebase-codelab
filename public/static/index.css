@@ -233,3 +233,7 @@ body.chat section {
 .chat-form .error:empty {
     display: none;
 }
+
+.hidden {
+    display: none !important;
+}
