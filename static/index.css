@@ -135,7 +135,7 @@ body.chat section {
     object-fit: cover;
     object-position: center center;
     border-radius: 50%;
-    margin-right: 10px;
+    margin: 0 5px;
 }
 
 .chat-form input {
@@ -143,6 +143,7 @@ body.chat section {
     padding: 0.5em 1em;
     border: none;
     border-radius: 20px;
+    margin: 0 5px;
     font-size: 14px;
     outline: none;
 }
@@ -153,11 +154,18 @@ body.chat section {
     height: 32px;
     border: none;
     border-radius: 50%;
-    margin-left: 10px;
+    margin: 0 5px;
     background: #fff center center no-repeat;
     background-size: 50%;
+    cursor: pointer;
+    transition: transform 250ms ease;
 }
 
+.chat-form button:hover {
+    transform: scale(1.15);
+}
+
+.chat-form .logout-btn { background-image: url("images/logout.png"); }
 .chat-form .image-btn { background-image: url("images/image.png"); }
 .chat-form .send-btn { background-image: url("images/send.png"); }
 
