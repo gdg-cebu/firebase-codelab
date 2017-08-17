@@ -55,7 +55,6 @@ var login = {
             firebase.auth().signInWithPopup(provider).then(function(result) {
                 var user = result.user;
                 if (user) {
-                    console.log('wecome', user.email);
                     $('.error').text('');
                 }
             }, function(error) {
