@@ -8,6 +8,7 @@ var index = {
                 $('.chat').removeClass('hidden');
                 globalUser = user;
                 // database init
+                $('.user-avatar').attr('src', globalUser.photoURL);
                 database.init();
             }
         });
