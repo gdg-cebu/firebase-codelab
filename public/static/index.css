@@ -19,6 +19,10 @@ button {
     color: inherit;
 }
 
+.hidden {
+    display: none !important;
+}
+
 
 /** Chat Page **/
 
@@ -83,9 +87,29 @@ body.chat section {
     flex-direction: column;
     width: 90vw;
     max-width: 500px;
-    height: calc(90vh - 48px);
+    height: calc(80vh - 48px);
     margin-top: 20px;
     overflow: hidden;
+}
+
+.alert {
+    width: 90vw;
+    max-width: 500px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #fff;
+    background-color: #F44336;
+}
+
+.alert .resend-link {
+    float: right;
+    font-weight: 600;
+}
+
+.alert:not(.hidden) + section {
+    margin-top: 0;
 }
 
 .messages {
