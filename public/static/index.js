@@ -1,4 +1,4 @@
-var globalUser = null;
+var currentUser = null;
 var index = {
     init: function() {
         firebase.auth().onAuthStateChanged(function(user) {
@@ -6,9 +6,10 @@ var index = {
                 window.location = '/login.html';
             } else {
                 $('.chat').removeClass('hidden');
-                globalUser = user;
+                currentUser = user;
                 // database init
-                $('.user-avatar').attr('src', globalUser.photoURL);
+                var photo = currentUser.photoURL || 'https://randomuser.me/api/portraits/men/79.jpg';
+                $('.user-avatar').attr('src', photo);
                 database.init();
             }
         });
@@ -16,9 +17,7 @@ var index = {
     },
 
     enableLogout: function() {
-        console.log('haha');
         $('.logout-btn').on('click', function(e) {
-            console.log('haha2');
             firebase.auth().signOut();
         });
     }
