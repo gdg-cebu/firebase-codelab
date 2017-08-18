@@ -1,3 +1,3 @@
-# Firebase Codelab
+# Firebase Workshop
 
-Codelab repository for GDG Cebu's DevMeets: Firebase Workshop.
+Project repository for GDG Cebu's **DevMeets: Firebase** Workshop.
