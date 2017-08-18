@@ -122,6 +122,24 @@ body.chat section {
     overflow: auto;
 }
 
+.messages:empty {
+    height: 50px;
+    position: relative;
+}
+
+.messages:empty::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    border: 3px solid #333;
+    border-top-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+    animation: rotate 500ms linear infinite;
+}
+
 .message {
     flex-shrink: 0;
     max-width: 80%;
@@ -272,4 +290,17 @@ body.chat section {
     bottom: 0;
     background-color: red;
     opacity: 0.01;
+}
+
+
+/** Animation Definitions **/
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
